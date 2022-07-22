@@ -1,0 +1,5 @@
+requests
+lxml
+selenium
+undetected-chromedriver
+awscli
