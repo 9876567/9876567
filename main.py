@@ -43,7 +43,9 @@ def chrome_download_file(url):
     driver = undetected_chromedriver.Chrome(use_subprocess=True, enable_cdp_events=True)
     driver.add_cdp_listener("Network.dataReceived", mylousyprintfunction)
     driver.get(url)
-    time.sleep(300)
+    time.sleep(120)
+    driver.get(url)
+    time.sleep(120)
     driver.quit()
 
 
