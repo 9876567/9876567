@@ -30,6 +30,7 @@ def get_latest_download_link(pubpage):
     tree = html.fromstring(resp.content)
     download_link = tree.xpath(
         '//span[starts-with(text(), "https://")]/text()')[0]
+    print(download_link)
     return download_link
 
 
