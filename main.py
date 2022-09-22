@@ -7,6 +7,7 @@ import os
 import undetected_chromedriver
 from pathlib import Path
 from lxml import html
+from pprint import pformat
 
 headers = {
     'User-Agent': "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
@@ -34,8 +35,13 @@ def get_latest_download_link(pubpage):
     return download_link
 
 
+def mylousyprintfunction(eventdata):
+    print(pformat(eventdata))
+
+
 def chrome_download_file(url):
-    driver = undetected_chromedriver.Chrome(use_subprocess=True)
+    driver = undetected_chromedriver.Chrome(use_subprocess=True, enable_cdp_events=True)
+    driver.add_cdp_listener("Network.dataReceived", mylousyprintfunction)
     driver.get(url)
     time.sleep(60)
     driver.quit()
