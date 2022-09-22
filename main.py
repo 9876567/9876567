@@ -34,7 +34,7 @@ def get_latest_download_link(pubpage):
 
 
 def chrome_download_file(url):
-    driver = undetected_chromedriver.Chrome(version_main=103, use_subprocess=True)
+    driver = undetected_chromedriver.Chrome(use_subprocess=True)
     driver.get(url)
     time.sleep(60)
     driver.quit()
