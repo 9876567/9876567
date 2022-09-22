@@ -3,3 +3,4 @@ lxml
 selenium
 undetected-chromedriver
 awscli
+pprint
