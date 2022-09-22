@@ -66,7 +66,5 @@ filepath = download_zip()
 unzip(filepath)
 install()
 dbpath = "C:\Program Files (x86)\cz88.net\ip\qqwry.dat"
-licensepath = "C:\Program Files (x86)\cz88.net\ip\License.txt"
 os.mkdir("db")
 shutil.copy2(dbpath, "./db/")
-shutil.copy2(licensepath, "./db/")
